@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-
 let frameInterval = null;
 let timerInterval = null;
 function Typewriter({ frames }) {
@@ -17,6 +16,7 @@ function Typewriter({ frames }) {
           parseInt(Object.keys(frames)[Object.keys(frames).length - 1])
         ) {
           setAnimatedText('');
+          setTimer(0);
 
           return 0;
         }
@@ -33,7 +33,7 @@ function Typewriter({ frames }) {
   const startTimer = () => {
     timerInterval = setInterval(() => {
       setTimer((prevTimer) => prevTimer + 1);
-    }, 1000);
+    }, 10);
   };
 
   const stopTimer = () => {
@@ -56,11 +56,11 @@ function Typewriter({ frames }) {
 
   useEffect(() => {
     console.log({
-      frames
-    })
+      frames,
+    });
 
-    setFrame(-1)
-    setAnimatedText('')
+    setFrame(-1);
+    setAnimatedText('');
 
     startAnimation();
     startTimer();
@@ -69,21 +69,36 @@ function Typewriter({ frames }) {
       stopAnimation();
       stopTimer();
     };
-    
-  }, [frames])
+  }, [frames]);
 
-  return <pre
-    style={{
-      whiteSpace: 'break-spaces',
-      textAlign: 'left',
-      fontSize: '0.8rem',
-    }}
-  >{animatedText}</pre>;
+  return (
+    <div
+      style={{
+        textAlign: 'left',
+      }}
+    > 
+      {timer !== 0 && <div
+        style={{
+          fontSize: '0.6rem',
+          marginBottom: 0,
+        }}
+      >{Math.round(timer / 10)}ms</div>}
+      <pre
+        style={{
+          marginTop: '0.2rem',
+          whiteSpace: 'break-spaces',
+          textAlign: 'left',
+          fontSize: '0.8rem',
+        }}
+      >
+        {animatedText}
+      </pre>
+    </div>
+  );
 }
 
 export default Typewriter;
 
-
 Typewriter.defaultProps = {
-    frames: {}
-}
+  frames: {},
+};

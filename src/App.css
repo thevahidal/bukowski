@@ -39,3 +39,19 @@
     min-width: 200px;
   }
 }
+
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+pre::after {
+  content: "";
+  width: 10px;
+  height: 20px;
+  background: #fff;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+}

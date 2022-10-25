@@ -75,6 +75,7 @@ const TypingCapturer = ({ onRecordingEnded }) => {
     >
       <textarea
         onKeyDown={handleKeyDown}
+        onKeyPress={handleKeyDown}
         disabled={!recording}
         ref={textareaRef}
         placeholder={
@@ -110,7 +111,7 @@ const TypingCapturer = ({ onRecordingEnded }) => {
             </button>
           )}
         </div>
-          {timer !== 0 && <div>{Math.round(timer / 10)} ms</div>}
+          {timer !== 0 && <div>{Math.round(timer / 10)}ms</div>}
       </div>  
     </div>
   );
