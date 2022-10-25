@@ -75,7 +75,8 @@ function Typewriter({ frames }) {
   return <pre
     style={{
       whiteSpace: 'break-spaces',
-      textAlign: 'left'
+      textAlign: 'left',
+      fontSize: '0.8rem',
     }}
   >{animatedText}</pre>;
 }
