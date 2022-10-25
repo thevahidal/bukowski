@@ -61,6 +61,7 @@ function Typewriter({ frames }) {
 
     setFrame(-1);
     setAnimatedText('');
+    setTimer(0);
 
     startAnimation();
     startTimer();
@@ -81,6 +82,7 @@ function Typewriter({ frames }) {
         style={{
           fontSize: '0.6rem',
           marginBottom: 0,
+          color: '#555',
         }}
       >{Math.round(timer / 10)}ms</div>}
       <pre

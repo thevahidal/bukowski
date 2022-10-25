@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 
-
 let timerInterval;
 const TypingCapturer = ({ onRecordingEnded }) => {
   const [frames, setFrames] = useState({});
@@ -49,12 +48,12 @@ const TypingCapturer = ({ onRecordingEnded }) => {
       // do nothing
     }
   };
-  
+
   const handleTextareaClick = () => {
     if (textareaRef.current.disabled) {
-      alert('Click the "Start" button to start recording.')
+      alert('Click the "Start" button to start recording.');
     }
-  }
+  };
 
   useEffect(() => {
     textareaRef.current.focus();
@@ -79,17 +78,15 @@ const TypingCapturer = ({ onRecordingEnded }) => {
         disabled={!recording}
         ref={textareaRef}
         placeholder={
-            !recording
-                ? 'Click the "Start" button to start recording.'
+          !recording
+            ? 'Click the "Start" button to start recording.'
             : 'Now start typing here...'
         }
         autoFocus
         value={text}
         onChange={(e) => setText(e.target.value)}
         className='textarea'
-        style={{
-
-        }}
+        style={{}}
         onClick={handleTextareaClick}
       />
       <div
@@ -111,17 +108,25 @@ const TypingCapturer = ({ onRecordingEnded }) => {
             </button>
           )}
         </div>
-          {timer !== 0 && <div>{Math.round(timer / 10)}ms</div>}
-      </div>  
+        {timer !== 0 && (
+          <div
+            style={{
+              fontSize: '0.6rem',
+              color: '#555',
+            }}
+          >
+            {Math.round(timer / 10)}ms
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-
 export default TypingCapturer;
 
 TypingCapturer.defaultProps = {
-    onRecordingEnded: (frames) => {
-        console.log(frames);
-    }
-}
+  onRecordingEnded: (frames) => {
+    console.log(frames);
+  },
+};
