@@ -39,6 +39,7 @@ function App() {
       <h4
         style={{
           textAlign: 'left',
+          marginTop: '0.5rem',
         }}
       >Bukowsi</h4>
       <TypingCapturer onRecordingEnded={setFrames} />

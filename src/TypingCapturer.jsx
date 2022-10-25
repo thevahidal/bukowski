@@ -85,15 +85,9 @@ const TypingCapturer = ({ onRecordingEnded }) => {
         autoFocus
         value={text}
         onChange={(e) => setText(e.target.value)}
+        className='textarea'
         style={{
-          background: '#222',
-          padding: '0.5rem 0.6rem',
-          borderRadius: '0.5rem',
-          fontSize: '0.6rem',
-          minWidth: 400,
-          minHeight: 100,
-          color: '#fff',
-          marginBottom: '0.5rem',
+
         }}
         onClick={handleTextareaClick}
       />
