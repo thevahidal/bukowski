@@ -35,13 +35,34 @@ function App() {
         maxWidth: 400,
         minHeight: '100vh',
       }}
-    > 
-      <h4
+    >
+      <div
         style={{
-          textAlign: 'left',
-          marginTop: '0.5rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '0.8rem',
         }}
-      >Bukowsi</h4>
+      >
+        <h4
+          style={{
+            textAlign: 'left',
+            margin: 0,
+          }}
+        >
+          Bukowsi
+        </h4>
+        <div>
+          <a
+            href='https://github.com/thevahidal/bukowski'
+            target='_blank'
+            referrerPolicy='no-referrer'
+            className='tab'
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
       <TypingCapturer onRecordingEnded={setFrames} />
       <br />
       <Typewriter frames={frames} />
