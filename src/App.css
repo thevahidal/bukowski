@@ -3,3 +3,17 @@
   padding: 2rem;
   text-align: center;
 }
+
+.button {
+  background: #333;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.55rem;
+  color: #fff;
+  border: none;
+}
+
+.success {
+  background-color: #4caf50;
+}
+
