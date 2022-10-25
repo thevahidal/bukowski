@@ -33,9 +33,16 @@ function App() {
     <div
       style={{
         maxWidth: 400,
+        minHeight: '100vh',
       }}
-    >
+    > 
+      <h4
+        style={{
+          textAlign: 'left',
+        }}
+      >Bukowsi</h4>
       <TypingCapturer onRecordingEnded={setFrames} />
+      <br />
       <Typewriter frames={frames} />
     </div>
   );

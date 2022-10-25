@@ -77,7 +77,11 @@ const TypingCapturer = ({ onRecordingEnded }) => {
         onKeyDown={handleKeyDown}
         disabled={!recording}
         ref={textareaRef}
-        placeholder={'Start typing here...'}
+        placeholder={
+            !recording
+                ? 'Click the "Start" button to start recording.'
+            : 'Now start typing here...'
+        }
         autoFocus
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -87,7 +91,7 @@ const TypingCapturer = ({ onRecordingEnded }) => {
           borderRadius: '0.5rem',
           fontSize: '0.6rem',
           minWidth: 400,
-          minHeight: 150,
+          minHeight: 100,
           color: '#fff',
           marginBottom: '0.5rem',
         }}
