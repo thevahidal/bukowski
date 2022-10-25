@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import * as Panelbear from "@panelbear/panelbear-js";
 
 import Typewriter from './Typewriter';
 import TypingCapturer from './TypingCapturer';
+
+Panelbear.trackPageview();
 
 const demoFrames = {
   285: 'D',

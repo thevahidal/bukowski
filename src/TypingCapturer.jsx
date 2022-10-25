@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import * as Panelbear from "@panelbear/panelbear-js";
 
 let timerInterval;
 const TypingCapturer = ({ onRecordingEnded }) => {
@@ -6,6 +7,7 @@ const TypingCapturer = ({ onRecordingEnded }) => {
   const [timer, setTimer] = useState(0);
   const [recording, setRecording] = useState(false);
   const [text, setText] = useState('');
+  const [capturingId, setCapturingId] = useState(null);
 
   const textareaRef = useRef();
 
@@ -22,6 +24,11 @@ const TypingCapturer = ({ onRecordingEnded }) => {
   const startRecording = () => {
     startTimer();
     setRecording(true);
+    const newCapturingId = Math.random().toString(36).substring(7);
+    setCapturingId(newCapturingId);
+    Panelbear.track("recording_started", {
+        id: newCapturingId,
+    });
   };
 
   const stopRecording = () => {
@@ -33,6 +40,11 @@ const TypingCapturer = ({ onRecordingEnded }) => {
     setFrames({});
     setTimer(0);
     setText('');
+    Panelbear.track("recording_stopped", {
+        id: capturingId,
+        frames: Object.keys(frames).length,
+        length: timer,
+    });
   };
 
   const handleKeyDown = (e) => {
