@@ -6,10 +6,8 @@ import App from './App'
 import './index.css'
 
 Panelbear.load(import.meta.env.VITE_PANEL_BEAR_SITE_ID, {
-  debug: import.meta.env.MODE === 'development',
+  debug: import.meta.env.DEV,
 });
-
-console.log(import.meta.env)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
