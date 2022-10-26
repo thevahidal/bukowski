@@ -3,6 +3,7 @@ import * as Panelbear from "@panelbear/panelbear-js";
 
 import Typewriter from './Typewriter';
 import TypingCapturer from './TypingCapturer';
+import VideoRenderer from './VideoRenderer';
 
 Panelbear.trackPageview();
 
@@ -68,6 +69,11 @@ function App() {
       </div>
       <TypingCapturer onRecordingEnded={setFrames} />
       <br />
+      <div
+        className='options'
+      >
+        <VideoRenderer />
+      </div>
       <Typewriter frames={frames} />
     </div>
   );

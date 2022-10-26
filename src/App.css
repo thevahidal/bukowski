@@ -60,3 +60,9 @@ pre::after {
   color: #fff;
   font-size: 0.6rem;
 }
+
+.options {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.3rem;
+}

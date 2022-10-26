@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.6",
     "@panelbear/panelbear-js": "^1.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

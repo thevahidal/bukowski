@@ -3,7 +3,7 @@ import './App.css';
 
 let frameInterval = null;
 let timerInterval = null;
-function Typewriter({ frames }) {
+function Typewriter({ frames, showTimer }) {
   const [frame, setFrame] = useState(-1);
   const [timer, setTimer] = useState(0);
   const [animatedText, setAnimatedText] = useState('');
@@ -78,7 +78,7 @@ function Typewriter({ frames }) {
         textAlign: 'left',
       }}
     > 
-      {timer !== 0 && <div
+      {showTimer && timer !== 0 && <div
         style={{
           fontSize: '0.6rem',
           marginBottom: 0,
@@ -103,4 +103,5 @@ export default Typewriter;
 
 Typewriter.defaultProps = {
   frames: {},
+  showTimer: true,
 };
