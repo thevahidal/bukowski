@@ -1,5 +1,11 @@
+<img src="docs/logo.png" height='50px' >
+
 # Bukowski
 A human typewriter
+
+[Demo](https://bukowski-typewriter.netlify.app/)
+
+![bukowski-screenshot.png](/docs/bukowsi-screenshot.png)
 
 ## Development
 
